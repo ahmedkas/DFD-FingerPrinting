@@ -34,18 +34,20 @@ for i in range(len(X_test)):
             if X_test[i][j] == 1:
                 Cout += 1
                 if last == -1 :
-                    toAppend = int(1+perturbationCurrent*Cin)
-                    for k in range(toAppend):
-                        X_testN[i].append(-1)
-                        countAdded += 1
+                    if ClientSide:
+                        toAppend = int(1+perturbationCurrent*Cin)
+                        for k in range(toAppend):
+                            X_testN[i].append(-1)
+                            countAdded += 1
                     Cin = 0
             elif X_test[i][j] == -1:
                 Cin += 1
                 if last == 1 :
-                    toAppend = int(1+perturbationCurrent*Cout)
-                    for k in range(toAppend):
-                        X_testN[i].append(1)
-                        countAdded += 1
+                    if ServerSide:
+                        toAppend = int(1+perturbationCurrent*Cout)
+                        for k in range(toAppend):
+                            X_testN[i].append(1)
+                            countAdded += 1
                     Cout = 0
         last = X_test[i][j]
     X_testN[i] = X_testN[i][:5000]
