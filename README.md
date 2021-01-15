@@ -16,8 +16,8 @@ The defense propose of the following steps:
 2- Replay previously sent packets or send dummy packets to the destination. The number of send packets are equal to the perturbation parameter multiplied by the length of the last burst (prior to the one currently appending to). 
 3- Periodically, e.g., after each burst or after time window, change the perturbation rate following a normal distribution. This is user configurable parameter.
 
-The code read the data as represented by (https://github.com/deep-fingerprinting/df), and modify the traces on the direction-level representation. 
 
+> The code read the data as represented by (https://github.com/deep-fingerprinting/df), and modifies the traces on the direction-level representation. 
 > Note: This code provides only a proof-of-concept, and may or may not work for other data representations. 
 
 
