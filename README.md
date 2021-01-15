@@ -1,6 +1,6 @@
 # DFD: Adversarial Learning-based Approach to Defend Against Website Fingerprinting
 
-This project provides the implementation of DFD, website fingerprinting defense by introducing perturbation to the packets sequence.
+This project provides the implementation of DFD, website fingerprinting defense by introducing perturbation to the packets sequences.
 
 The project is implemented on top of Deep Fingerprinting: Undermining Website Fingerprinting Defenses with Deep Learning (https://github.com/deep-fingerprinting/df), using the same baseline models and representation. 
 
@@ -11,12 +11,15 @@ DFD: Adversarial Learning-based Approach to Defend Against Website Fingerprintin
 IEEE International Conference on Computer Communications (INFOCOM), 2020.
 ```
 
-The defense propose of the following steps:
-1- After sending every burst of packets, defined as packets in the same direction,record the length of the burst.
+To reimplement DFD, please follow the following steps:
 
-2- Replay previously sent packets or send dummy packets to the destination. The number of send packets are equal to the perturbation parameter multiplied by the length of the last burst (prior to the one currently appending to). 
+1- After sending every burst of packets, defined as packets in the same direction, record the length of the burst.
 
-3- Periodically, e.g., after each burst or after time window, change the perturbation rate following a normal distribution. This is user configurable parameter.
+2- Replay previously sent packets or send dummy packets to the destination. The number of send packets is equal to the perturbation parameter multiplied by the length of the last burst (prior to the one currently appending to). 
+
+3- Periodically, e.g., after each burst or after time window, change the perturbation rate following a normal distribution. This is a user-configurable parameter.
+
+A proof of concept code is provided in DFD.py, it runs on top of Deep Fingerprinting (https://github.com/deep-fingerprinting/df). 
 
 
 > The code read the data as represented by (https://github.com/deep-fingerprinting/df), and modifies the traces on the direction-level representation. 
