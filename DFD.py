@@ -3,6 +3,7 @@ import numpy as np
 import random
 
 # X_test: the data to be perturbed
+# The data should be loaded from https://github.com/deep-fingerprinting/df, and used here.
 X_test = load()
 
 # pert: the perturbation rate (positive number)
