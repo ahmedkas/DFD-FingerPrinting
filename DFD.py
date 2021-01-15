@@ -5,7 +5,7 @@ import random
 # The data should be loaded from https://github.com/deep-fingerprinting/df, and used here.
 # X_test: the data to be perturbed, should be a matrix of Nx5000
 # N refer to the number of traces, where each trace are of values {-1,0,1}
-X_test = 
+X_test = #Your Data
 
 # pert: the perturbation rate (positive number)
 pert = 0.50
