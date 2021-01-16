@@ -22,7 +22,7 @@ To reimplement DFD, please follow the following steps:
 A proof of concept code is provided in DFD.py, it runs on top of Deep Fingerprinting (https://github.com/deep-fingerprinting/df). 
 The evaluation and baseline models are similar to the ones used in the previous work.
 
-> The code read the data as represented by (https://github.com/deep-fingerprinting/df), and modifies the traces on the direction-level representation. 
+> The code reads the data as represented by (https://github.com/deep-fingerprinting/df), and modifies the traces on the direction-level representation. 
 
 > Note: This code provides only a proof-of-concept, and may or may not work for other data representations. 
 
