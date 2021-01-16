@@ -5,7 +5,8 @@ import random
 # The data should be loaded from https://github.com/deep-fingerprinting/df, and used here.
 # X_test: the data to be perturbed, should be a matrix of Nx5000
 # N refer to the number of traces, where each trace are of values {-1,0,1}
-X_test = # Data
+f = open("./sampleInput.pickle","rb")
+X_test = pickle.load(f)# Data
 
 # pert: the perturbation rate (positive number)
 pert = 0.50
@@ -21,9 +22,8 @@ ClientSide = True
 
 # X_testN: the new perturbed representation
 X_testN = []
-
 for i in range(len(X_test)):
-    
+
     X_testN.append([])
     Cout = 0
     Cin = 0
@@ -32,8 +32,8 @@ for i in range(len(X_test)):
         X_testN[i].append(X_test[i][j])
         if X_test[i][j] == 0:
             continue
-	else:
-            perturbationCurrent = random.randrange(pert*variation_ratio, pert*(1+variation_ratio))
+        else:
+            perturbationCurrent = random.uniform(pert*variation_ratio, pert*(1+variation_ratio))
             if X_test[i][j] == 1:
                 Cout += 1
                 if last == -1 :
@@ -41,7 +41,6 @@ for i in range(len(X_test)):
                         toAppend = int(1+perturbationCurrent*Cin)
                         for k in range(toAppend):
                             X_testN[i].append(-1)
-                            countAdded += 1
                     Cin = 0
             elif X_test[i][j] == -1:
                 Cin += 1
@@ -50,9 +49,11 @@ for i in range(len(X_test)):
                         toAppend = int(1+perturbationCurrent*Cout)
                         for k in range(toAppend):
                             X_testN[i].append(1)
-                            countAdded += 1
                     Cout = 0
         last = X_test[i][j]
     X_testN[i] = X_testN[i][:5000] # The representation cut traces above 5,000 packets
 
 # X_testN contains the perturbed data.
+X_testN = np.asarray(X_testN)
+f = open("./sampleOutput.pickle","wb")
+pickle.dump(X_testN,f)
