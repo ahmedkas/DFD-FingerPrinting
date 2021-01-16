@@ -20,7 +20,7 @@ To reimplement DFD, please follow the following steps:
 3- Periodically, e.g., after each burst or after time window, change the perturbation rate following a normal distribution. This is a user-configurable parameter.
 
 A proof of concept code is provided in DFD.py, it runs on top of Deep Fingerprinting (https://github.com/deep-fingerprinting/df). 
-
+The evaluation and baseline models are similar to the ones used in the previous work.
 
 > The code read the data as represented by (https://github.com/deep-fingerprinting/df), and modifies the traces on the direction-level representation. 
 
